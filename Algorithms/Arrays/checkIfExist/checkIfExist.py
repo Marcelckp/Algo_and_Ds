@@ -1,7 +1,8 @@
 def checkIfExists(nums):
     for num in nums:
-        if (nums.index(num * 2)):
-            return True
+        for n in nums:
+            if (n * 2 == num):
+                return True
 
 
 print(checkIfExists([0, 0]))
