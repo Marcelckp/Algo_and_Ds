@@ -49,5 +49,3 @@ We can do so by using the “disjoint set” data structure, also known as the �
 2. Solving the connectivity question in Figure 5 / The image above.
 
 <br>
-
-
