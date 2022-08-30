@@ -50,12 +50,6 @@ We can do so by using the “disjoint set” data structure, also known as the �
 
 <br>
 
-![Introduction video to disjoint sets](https://player.vimeo.com/api/player.js)
 
-# this is a *markdown* document
+[![Introduction video to disjoint Sets](http://img.youtube.com/vi/6lOgh8torPA/0.jpg)](/Resources/disjointSet.html "Video Title")
 
-<iframe  title="YouTube video player" width="480" height="390" src="https://player.vimeo.com/api/player.js" frameborder="0" allowfullscreen></iframe>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-with a **youtube** video embedded
