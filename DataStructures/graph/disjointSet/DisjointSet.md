@@ -51,5 +51,3 @@ We can do so by using the “disjoint set” data structure, also known as the �
 <br>
 
 
-[![Introduction video to disjoint Sets](http://img.youtube.com/vi/6lOgh8torPA/0.jpg)](/Resources/disjointSet.html "Video Title")
-
