@@ -56,4 +56,6 @@ We can do so by using the “disjoint set” data structure, also known as the �
 
 <iframe  title="YouTube video player" width="480" height="390" src="https://player.vimeo.com/api/player.js" frameborder="0" allowfullscreen></iframe>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 with a **youtube** video embedded
