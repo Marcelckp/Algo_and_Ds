@@ -14,6 +14,8 @@ We can do so by using the “disjoint set” data structure, also known as the �
 
 ![](https://leetcode.com/explore/learn/card/Figures/Graph_Explore/Disjoint_Set_1_edited.png)
 
+Figure 5
+
 <br>
 
 ***Note:***
@@ -49,3 +51,26 @@ We can do so by using the “disjoint set” data structure, also known as the �
 2. Solving the connectivity question in Figure 5 / The image above.
 
 <br>
+
+<br>
+
+# Two important Functions of a 'disjoint set'
+
+<br>
+
+- The find function finds the root node of a given vertex. For example, in Figure 5, the output of the find function for vertex 3 is 0.
+
+- The union function unions two vertices and makes their root nodes the same. In Figure 5, if we union vertex 4 and vertex 5, their root node will become the same, which means the union function will modify the root node of vertex 4 or vertex 5 to the same root node.
+
+<br>
+
+# Two ways to implement a 'disjoint set'
+
+<br>
+
+- Implementation with Quick Find: in this case, the time complexity of the find function will be O( 1 ). However, the union function will take more time with the time complexity of O( N ).
+
+- Implementation with Quick Union: compared with the Quick Find implementation, the time complexity of the union function is better. Meanwhile, the find function will take more time in this case.
+
+<br>
+
