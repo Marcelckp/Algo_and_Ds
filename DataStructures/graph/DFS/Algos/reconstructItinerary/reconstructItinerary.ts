@@ -34,7 +34,7 @@
 function findItinerary(tickets: string[][]): string[] {
     tickets.sort()
   const adjList = createList(tickets);
-    // console.log(adjList)
+    console.log(adjList)
   
     const traverse = (path) => {
 
