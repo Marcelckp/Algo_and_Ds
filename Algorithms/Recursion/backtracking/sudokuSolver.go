@@ -48,16 +48,21 @@ func sudokuSolver(board [][]int) (bool, [][]int) {
 				// Try to place a number in the cell
 
 				for num := 1; num <= 9; num++ {
+					// Check if the number is valid for placement
 					if isNumValidForPlacement(board, i, j, num) {
+						// Place the number in the cell if its valid and move to the next cell
 						board[i][j] = num
 
+						// Recursively call the function to solve the board
 						if solved, _ := sudokuSolver(board); solved {
 							return true, board
 						} else {
+							// backtrack if the board is not solved and try the next number in the cell
 							board[i][j] = 0
 						}
 					}
 				}
+				// If all numbers are invalid we need to backtrack back to the previous cell and try the next number in the previous cell if possible otherwise we return back until we find a cell with a number that can be changed and keep going out of the recursive context until their are no more cells to backtrack to. If we reach the first cell and all numbers are invalid then we return false and the board as it is unsolvable
 				return false, board
 			}
 		}
@@ -67,6 +72,7 @@ func sudokuSolver(board [][]int) (bool, [][]int) {
 }
 
 func main() {
+	// Solvable board test case
 	res, board := sudokuSolver([][]int{ 	
 		{5, 3, 0, 0, 7, 0, 0, 0, 0},
 		{6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -79,9 +85,38 @@ func main() {
 		{0, 0, 0, 0, 8, 0, 0, 7, 9},
 	})
 
-	fmt.Println(res)
+	if res {
+		fmt.Println("Solved")
+	} else {
+		fmt.Println("Unsolvable")
+	}
 	fmt.Println("")
 	for _, row := range board {
+		fmt.Println(row)
+	}
+
+	fmt.Println("")
+
+	// Unsolvable board test case
+	res2, board2 := sudokuSolver([][]int{ 	
+		{6, 3, 0, 0, 7, 0, 0, 0, 0},
+		{6, 0, 0, 1, 9, 5, 0, 0, 0},
+		{0, 9, 8, 0, 0, 0, 0, 6, 0},
+		{8, 0, 0, 0, 6, 0, 0, 0, 3},
+		{4, 0, 0, 8, 0, 3, 0, 0, 1},
+		{7, 0, 0, 0, 2, 0, 0, 0, 6},
+		{0, 6, 0, 0, 0, 0, 2, 8, 0},
+		{0, 0, 0, 4, 1, 9, 0, 0, 5},
+		{0, 0, 0, 0, 8, 0, 0, 7, 9},
+	})
+
+	if res2 {
+		fmt.Println("Solved")
+	} else {
+		fmt.Println("Unsolvable")
+	}
+	fmt.Println("")
+	for _, row := range board2 {
 		fmt.Println(row)
 	}
 }
