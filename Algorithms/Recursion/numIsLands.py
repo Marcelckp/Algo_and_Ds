@@ -1,3 +1,4 @@
+# This solution uses the depth first search technique to solve the num islands problem
 class Solution:
     # I and J here are the coordinates of the current cell we are at in the matrix
     def dfs(self, grid, i, j):
@@ -7,6 +8,7 @@ class Solution:
         grid[i][j] = '0'
 
         # We recursively call this function for all the neighbours of the current cell horizontally and vertically.
+        # Depth first search
         self.dfs(grid, i + 1, j)
         self.dfs(grid, i - 1, j)
         self.dfs(grid, i, j + 1)

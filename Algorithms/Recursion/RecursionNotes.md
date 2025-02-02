@@ -2,7 +2,7 @@
 
 ## Principle of Recursion
 
-Recursion is an approach to solving problems using a function that calls itself as a subroutine / a for of iteration.
+Recursion is an approach to solving problems using a function that calls itself as a subroutine / a form of iteration.
 
 The trick to recursion is that each time a recursive function calls itself, it reduces the given problem into sub-problems.
 
@@ -84,7 +84,7 @@ There are two important things that one needs to figure out before implementing 
 
 <br>
 
-### Once we figure out the above two concepts to implement a recursive function we simply call the function itself according to the recurrence relation until we reach the base case --> so the goal of a recursive function is to reach the base case.
+### Once we figure out the above two concepts to implement a recursive function we simply call the function itself according to the recurrence relation until we reach the base case --> so the goal of a recursive function is to reach the base case
 
 To better explain this we can look at Pascal's triangle
 
@@ -252,35 +252,33 @@ Heres a stack break down
 
     */
 
-
 <br>
 
-### Memoization 
+### Memoization / Dynamic programming
+
 To get rid of these duplicate calculations we can use memoization which is also know as caching and it's the process of storing the immediate results of a function call in a cache and then reusing those values at a later time.
 
-#### *Memoization is an optimization technique used primarily to speed up computer programs by storing the result fo expensive function calls and returning the cached result when the same input is given / occurs or is seen again*
+#### Memoization is an optimization technique used primarily to speed up computer programs by storing the result fo expensive function calls and returning the cached result when the same input is given / occurs or is seen again
 
 <br>
 
-### Fib memoization strategy 
+### Fib memoization strategy
+
 For the fib function we will use a hash table / object / dictionary to keep track of the function result of each function invocation with the respective n position as the key.
 
 The hash table will serve as a cache that saves us from dup calculations, which saves us time since we do not need to re-compute the value for a specific F(n) invocation
 
 <br>
 
-### ***NB -> The memoization technique for optimization is a good example of how one can reduce computational time & power in exchange for some additions to the space complexity***
+### **_NB -> The memoization technique for optimization is a good example of how one can reduce computational time & power in exchange for some additions to the space complexity_**
 
     S.C ++       T.C --
 
+## Time Complexity
 
-
-## Time Complexity 
-
-Given a recursion algorithm, its time complexity O(T) is typically the product of the number of recursion invocations ( denoted as R ) and the time complexity of calculation ( denoted as O(n or s)) that incurs along with each recursion call 
+Given a recursion algorithm, its time complexity O(T) is typically the product of the number of recursion invocations ( denoted as R ) and the time complexity of calculation ( denoted as O(n or s)) that incurs along with each recursion call
 
     ie) O(T) = R * O(S) --> Logarithmic T.C
-
 
 If we recall recall, in the problem of printReverse, we are asked to print the string in the reverse order. A recurrence relation to solve the problem can be expressed as follows:
 
@@ -290,37 +288,37 @@ where str[1...n] is the substring of the input string str, without the leading c
 
 As you can see, the function would be recursively invoked n times, where n is the size of the input string. At the end of each recursion, we simply print the leading character, therefore the time complexity of this particular operation is constant, i.e. O(1).
 
-To sum up, the overall time complexity of our recursive function printReverse(str) would be O(printReverse) = n * O(1) = O(n)
+To sum up, the overall time complexity of our recursive function printReverse(str) would be O(printReverse) = n \* O(1) = O(n)
 
 <br>
 
-**NB** for recursion, the functions it is rare that the number of recursive calls are linear to the size of the input 
+**NB** for recursion, the functions it is rare that the number of recursive calls are linear to the size of the input
 
 eg) if we look at the fib sequence we have a lot more recursive calls then the size of the input if we were to take on an iterative approach.
 
-In this case, it is better to resort to the execution tree, which is a tree that is used to denote the execution flow of a recursive function in particular. 
+In this case, it is better to resort to the execution tree, which is a tree that is used to denote the execution flow of a recursive function in particular.
 
 Each node in the tree represents an invocation of the recursive function / a possible new tree, which will therefore increase the total number of nodes in the tree / routes the tree will branch off to, so the number of trees is the number of recursive calls they are directly proportional to one another.
 
 <br>
 
-*refer to the fibonacci stack break down diagram*
+_refer to the fibonacci stack break down diagram_
 
 the execution tree of a recursive function would form a n length'd tree, with n as the number of times recursion appears in the recurrence relation / recursive triggers.
 
-ie) if we looked at the Fibonacci recursion tree it would from a binary tree, as you can see from the diagram on ***line 241***
+ie) if we looked at the Fibonacci recursion tree it would from a binary tree, as you can see from the diagram on **_line 241_**
 
-so in a full binary tree with n levels, the total number of nodes would be ( 2 ** n - 1 ). therefore the upper bound ( though not tight ) for the number of recursion triggers in Fib(n) would be (2 ** n - 1 ), which would result in an estimated T.C of 
+so in a full binary tree with n levels, the total number of nodes would be ( 2 ** n - 1 ). therefore the upper bound ( though not tight ) for the number of recursion triggers in Fib(n) would be (2 ** n - 1 ), which would result in an estimated T.C of
 
     O(2 ** n) >> Quadratic T.C
 
-When we bring memoization in to the picture we know that the values for a particular fib number will only be calculated once therefore we don't need to multiply n so our T.C becomes 
+When we bring memoization in to the picture we know that the values for a particular fib number will only be calculated once therefore we don't need to multiply n so our T.C becomes
 
     O(1) * n = O(n)  >> linear esk T.C
 
 <br>
 
-## Space Complexity 
+## Space Complexity
 
 Let analyze space complexity in recursive operations
 
@@ -332,35 +330,37 @@ There are mainly two parts of the space consumption that one should bear in mind
 <br>
 
 ### Recursion related space
+
 This refers to the memory cost that is incurred directly by the recursive calls / recurrence relation.
 
 ie) the call stack to keep track of the recursive function calls
 
-### ***NB*** In order for a function to complete a typical call the system allocates some space in the call stack to hold three important pieces of information
+### **_NB_** In order for a function to complete a typical call the system allocates some space in the call stack to hold three important pieces of information
 
 1. The returning address of the function call. Once the function call is completed, the program must know where to return to
-    
-    ie) The line of code after the function has been called so it can continue running the programme
+
+   ie) The line of code after the function has been called so it can continue running the programme
 
 2. The parameters that are passed in as arguments to the function call
 
-3. The local scoped variables within the function call 
+3. The local scoped variables within the function call
 
 <br>
 
-This space in the stack is the minimal cost that is incurred during a function call of ***ANY KIND*** however once the function is done, this space is freed ( through a process called garbage collection )
+This space in the stack is the minimal cost that is incurred during a function call of **_ANY KIND_** however once the function is done, this space is freed ( through a process called garbage collection )
 
 but for recursive function, this function calls chain up successively until they reach a base case. This means that the space of having multiple stacks grows the more the recursive function calls itself so the space & function calls accumulate && they are not freed until the function reach the base case.
 
-*** COOL INFORMATION ***
+**_COOL INFORMATION_**
 
 For recursive algorithms if there is no other memory consumption, then this recursion incurred space will be the space upper-bound of the algorithm
 
-if this is not managed we will encounter the famous ***STACK OVERFLOW***
+if this is not managed we will encounter the famous **_STACK OVERFLOW_**
 
 <br>
 
 ### Non-Recursion related space
+
 This refers to the memory space that is not directly related to recursion which typically includes the space (normally in heap) that is allocated for the global & local scoped variables.
 
 <br>
@@ -371,15 +371,89 @@ Recursion or not, you might need to store the input of the problem as a global v
 
 This all has a effect on the function space complexity so keep it in mind when you are calculating the S.C of a function, recursive or not.
 
-
 <br>
 
-### Important things to note about recursion 
-Its not a silver bullet, not every problem can be solved with recursion, due to time or space constraints & recursion itself might come with some undesired side effect such as stack overflows 
+### Important things to note about recursion
+
+Its not a silver bullet, not every problem can be solved with recursion, due to time or space constraints & recursion itself might come with some undesired side effect such as stack overflows
 
 But here are a fe big pointer to follow when you write a recursive function
 
 1. When in doubt, write down the recurrence relationship or base case.
 2. Whenever possible, apply memoization for increased T.C.
-3. When stack overflows occur due to time complexity constraints, try tail call recursion. 
+3. When stack overflows occur due to time complexity constraints, try tail call recursion.
 
+---
+
+### Backtracking
+
+This is a problem-solving technique that involves exploring all possible solutions to a problem by building a solution incrementally and abandoning solutions that fail to meet the conditions of the problem's constraints (backtracking).
+
+Here's a step-by-step explanation:
+
+Choose: Select a choice from the set of possible choices.
+
+Explore: Recursively explore this choice.
+
+Un-choose: If the choice leads to a solution, return it. If not, backtrack by undoing the choice and try another.
+
+Here's a Python example:
+
+```py
+def solve_n_queens(n):
+    def is_safe(board, row, col):
+        # Check this row on left side
+        for i in range(col):
+            if board[row][i] == 'Q':
+                return False
+
+        # Check upper diagonal on left side
+        for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
+            if board[i][j] == 'Q':
+                return False
+
+        # Check lower diagonal on left side
+        for i, j in zip(range(row, n), range(col, -1, -1)):
+            if board[i][j] == 'Q':
+                return False
+
+        return True
+
+    def solve(board, col):
+        # Base case: If all queens are placed
+        if col >= n:
+            return True
+
+        # Consider this column and try placing this queen in all rows one by one
+        for i in range(n):
+            if is_safe(board, i, col):
+                # Place this queen in board[i][col]
+                board[i][col] = 'Q'
+
+                # Recur to place rest of the queens
+                if solve(board, col + 1):
+                    return True
+
+                # If placing queen in board[i][col] doesn't lead to a solution, then backtrack
+                board[i][col] = '.'
+
+        # If the queen cannot be placed in any row in this column, return False
+        return False
+
+    # Initialize the board
+    board = [['.' for _ in range(n)] for _ in range(n)]
+
+    if not solve(board, 0):
+        return "No solution exists"
+
+    return board
+```
+
+Sure! Recursive backtracking is a problem-solving technique that involves exploring all possible solutions to a problem by building a solution incrementally and abandoning solutions that fail to satisfy the problem's constraints (backtracking).
+
+Here's a step-by-step explanation:
+
+Choose: Select a choice from the set of possible choices.
+Explore: Recursively explore this choice.
+Un-choose: If the choice leads to a solution, return it. If not, backtrack by undoing the choice and try another.
+A classic example of recursive backtracking is solving the N-Queens problem, where you need to place N queens on an N×N chessboard such that no two queens threaten each other.
