@@ -30,8 +30,6 @@ And when we do the conversion from binary to the normal base 10 number system we
 
 ## This is beneficial to know as computers operate by shuffling these Zeros and ones around as base 2 is the lifeline of computers
 
----
-
 ## Base number observations
 
 - In **_standard base-10_** number system - we have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. In which 10 is excluded `10 is excluded as we only use single digits and we only have 0-9 to do that`
@@ -168,6 +166,4 @@ Subtrahend:1    0    1    1
 Result:    0    0    0    1
 ```
 
-Result: The difference is 0001 (or simply 1 in binary).
-
-**_NOTE: You can do exponents like this in markdown 10<sup>2</sup>_**
+Result: The difference is 0001 (or simply 1 in binary)
