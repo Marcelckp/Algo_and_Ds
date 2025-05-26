@@ -19,7 +19,8 @@ Maximum Value: 22
 ## Approach
 
 1. **Recursive Solution**: Solve the problem by considering each item and deciding whether to include it in the knapsack or not.
-2. **Dynamic Programming**: Use a 2D table to store the maximum value for each weight capacity and item combination.
+
+2. **Dynamic Programming**: Use a 2D table to store the maximum value for each weight capacity and item combination. This makes it a **2D DP problem**, as the solution depends on two variables: the current item index and the remaining capacity.
 
 ## Code Example
 
