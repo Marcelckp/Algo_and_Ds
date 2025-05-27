@@ -54,11 +54,18 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
         }
         console.log(nums1[end], nums1, nums1[i], nums2[j])
     }
-    // if the length of nums1 / value of m is 0 -> meaning that the nums1 array has no values to check against
+    // if the length of nums1 / value of m is 0 -> meaning that the nums1 array has no values to check against so we can just add the values of nums2 to the end of the array and decrement the pointer of nums2
     while (j >= 0) {
         nums1[end--] = nums2[j--];
         console.log(nums1[i], nums2[j])
     }
+
+    // If the length of nums2 / value of n is 0 -> meaning that the nums2 array has no values to check against so we can just add the values of nums1 to the end of the array and decrement the pointer of nums1
+    while (i >= 0) {
+        nums1[end--] = nums1[i--];
+        console.log(nums1[i], nums2[j])
+    }
+    
     // T.C: O(M + N)
     // S.C: O(1)
 };
