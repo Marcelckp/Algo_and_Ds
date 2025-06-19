@@ -32,7 +32,7 @@ if (condition == true) {
 
 - Medical Diagnosis - Where the nodes represent questions for example. 'Does the patient have a fever'? and based on the answer we will keep traversing until we reach a leaf node where we will be suggested a diagnoses or actions to take such as 'Prescribing medication' or 'You have a common flu'.
 
-- Load Approval - Where the nodes represent the criteria for example. 'Is the credit score > 700' and based on the answer the branches represent the outcomes eg (Approved or Rejected). The leaf nodes in this case after traversing all decisions will represent the final loan decision.
+- Loan Approval - Where the nodes represent the criteria for example. 'Is the credit score > 700' and based on the answer the branches represent the outcomes eg (Approved or Rejected). The leaf nodes in this case after traversing all decisions will represent the final loan decision.
 
 ## Model Inference
 
