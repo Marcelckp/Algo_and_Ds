@@ -8,14 +8,14 @@ Tries are often used to create prefix trees, or trees that are used to find comm
 graph TD
     A[T]
     A --> B[R]
-    A --> C[I]
-    A --> D[E]
-    B --> E[E]
-    B --> F[E]
-    C --> G[M]
-    D --> H[S]
-    E --> I[S]
-    G --> J[S]
+    B --> C[E]
+    C --> D[E]
+    D --> E[S]
+    B --> F[I]
+    F --> G[E]
+    G --> H[S]
+    F --> I[p]
+    I --> K[S]
 ```
 
-**The letters in this trie spell out the words "TREE", "TREES", "TRIES", "TIMES".**
+**The letters in this trie spell out the words "TREE", "TREES", "TRIES", "TRIPS".**
