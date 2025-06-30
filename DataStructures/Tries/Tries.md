@@ -18,4 +18,4 @@ graph TD
     G --> J[S]
 ```
 
-**The letters in this trie spell out the words "TREE", "TRIES", "TIMES".**
+**The letters in this trie spell out the words "TREE", "TREES", "TRIES", "TIMES".**
